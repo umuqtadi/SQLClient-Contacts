@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+@if (ViewBag.Error != null)
+{
+    <div class="warning">@ViewBag.Error</div>
+}
+
+<h2>Instructions</h2>
+<p>
+    You'll be creating a SQLClient data access layer for a system to track personal contacts; like an address book. All of the controllers and views are wired up for you, all you'll have to do is create the sql table and data access layer.  Study how the controllers are managing the input from the user, you'll have to do this on your own soon!
+    <br/>
+    <br/>
+    Steps:
+    <ol>
+        <li>
+            In your database, create a Contacts table which has only (and exactly) the following columns:
+            <ul>
+                <li>ContactId</li>
+                <li>Name</li>
+                <li>Email</li>
+                <li>Title</li>
+            </ul>
+            <em>Make sure you set the Id to me a primary key and automatically increment!</em>
+        </li>
+        <li>
+            Using a <a href="http://www.developerfusion.com/tools/sql-connection-string/" target="_blank">ConnectionString generator</a> set...
+            <ul>
+                <li>Server: 184.168.47.13</li>
+                <li>Application Name: sp#FirstName</li>
+                <li>Select SQL Server Authentication and set the username value to sp#YourName</li>
+                <li>Copy the generated connection string and paste is over the connectionString value in your web.config DefaultConnection connection string (line 12)</li>
+                <li><em>Be sure to replace [Password] with your database password!</em></li>
+            </ul>
+        </li>
+        <li>
+            Fill out the Contact class in the Models folder
+        </li>
+        <li>
+            Fill out the ContactDataAccess class in the Models folder.  This resource will help you infinitly in this task: <a href="http://www.dotnetperls.com/sqlclient" target="_blank">SqlClient @@ Dot Net Perls</a>  The methods are already stubbed out for you.
+        </li>
+        <li>
+            If you've compelted the ContactDataAccess, run your app and create a new contact.  If that works, edit it.  If your edit works, delete it.  If you got this far, you're done!  You've just created your first data access layer!
+        </li>
+        <li>
+            Upload your ContactDataAccess.cs file to the Developer Portal site.
+        </li>
+    </ol>
+</p>

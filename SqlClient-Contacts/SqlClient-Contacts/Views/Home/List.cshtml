@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SqlClient_Contacts.Models.Contact>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Contacts List</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="warning">@ViewBag.Error</div>
+}
+
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Title</th>
+        <th></th>
+    </tr>
+    @foreach (var contact in Model)
+    {
+        <tr>
+            <td>@contact.ContactId</td>
+            <td>@contact.Name</td>
+            <td>@contact.Email</td>
+            <td>@contact.Title</td>
+            <td>
+                <a href="@Url.Action("Edit", "Home", new {id = contact.ContactId })" class="btn btn-primary btn-sm">
+                    Edit
+                </a>
+                <a href="@Url.Action("Delete", "Home", new {id = contact.ContactId })" class="btn btn-danger btn-sm" onclick="javascript:return confirm('Are you sure you want to delete this contact?')">
+                    Delete
+                </a>
+            </td>
+        </tr>
+    }
+</table>
